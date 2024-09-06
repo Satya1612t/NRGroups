@@ -16,7 +16,6 @@ import AddRoadIcon from '@mui/icons-material/AddRoad';
 import AutoModeIcon from '@mui/icons-material/AutoMode';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
-import PhoneIcon from '@mui/icons-material/Phone';
 
 const Transport = () => {
   return (
@@ -57,7 +56,6 @@ const Transport = () => {
     </div>
   )
 }
-{/* <Link to='' className="text-slate-900 bg-slate-50  hover:bg-slate-300  font-medium  text-sm px-5 py-3 rounded-sm border md:border-none capitalize"> Submit</Link> */ }
 
 const InputLabel = () => {
   return (

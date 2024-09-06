@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 type Props = {}
@@ -12,8 +11,7 @@ function Footer({ }: Props) {
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className='space-y-5 md:w-1/2 mb-2 md:mb-0 '>
             <Link to="https://flowbite.com/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-              {/* <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Flowbite Logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span> */}
+              
               <h1 className='text-4xl text-gray-100 font-bold tracking-tighter '>NRGroup</h1>
             </Link>
             <h1 className='text-sm  text-slate-50'>We are Madhya Pradesh’s top Transport service provider since 2023. We serve the entire gamut of Logistics from Storage Space to Logistics, Rack Handling and Skilled Man-power supply. We guide you for a hassle-free experience & optimized solution at your cost.</h1>
