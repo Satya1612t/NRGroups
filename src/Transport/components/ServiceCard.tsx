@@ -1,9 +1,9 @@
 import InfoIcon from '@mui/icons-material/Info';
-import { STATIC_DATA } from '../config';
+import { STATIC_DATA } from '../../config';
 import { Link } from 'react-router-dom';
 
 type Props = { 
-    type: 'it' | 'transport'
+    type: 'it' | 'transport' 
 }
 
 function ServiceCard({type}: Props) {

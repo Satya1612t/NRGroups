@@ -1,8 +1,10 @@
-import { STATIC_DATA } from "../config"
+import { STATIC_DATA } from "../../config"
 
 type Props = {}
 
 function TransportServiceCard({ }: Props) {
+    console.log();
+    
     return (
         <>
             {STATIC_DATA.TRANSPORTSERVICE.map((item, index) => (

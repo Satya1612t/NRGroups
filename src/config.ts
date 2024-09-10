@@ -4,6 +4,7 @@ export const STATIC_DATA = {
     IMAGE_URL: {
         'it': 'https://theforage.wpengine.com/wp-content/uploads/2022/09/tech-companies-1536x1024.jpg',
         'transport': 'https://www.easyhaul.com/blog/wp-content/uploads/2021/07/Blog-EasyHaul-Modes-of-Transport-Title-1.png',
+        'rs': 'https://www.easyhaul.com/blog/wp-content/uploads/2021/07/Blog-EasyHaul-Modes-of-Transport-Title-1.png',
     },
     SERVICE_CARD: {
         IT: {
@@ -13,8 +14,11 @@ export const STATIC_DATA = {
         TRANSPORT: {
             'Title': 'Reliable Transport Solutions for Your Business Needs',
             'Description': 'Discover our dependable transport solutions tailored to ensure the safe and timely delivery of your goods. NR Group is your trusted logistics partner.'
-
-        }
+        },
+        REAL_STATE: {
+            'Title': 'Reliable Transport Solutions for Your Business Needs',
+            'Description': 'Discover our dependable transport solutions tailored to ensure the safe and timely delivery of your goods. NR Group is your trusted logistics partner.'
+        },
 
     },
     SERVICE: {
