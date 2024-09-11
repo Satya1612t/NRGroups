@@ -1,5 +1,5 @@
 import Footer from '../components/Footer'
-import ServiceCard from '../Transport/components/ServiceCard'
+import ServiceCard from '../components/ServiceCard'
 
 type Props = {}
 

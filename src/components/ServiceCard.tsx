@@ -1,5 +1,5 @@
 import InfoIcon from '@mui/icons-material/Info';
-import { STATIC_DATA } from '../../config';
+import { STATIC_DATA } from '../config';
 import { Link } from 'react-router-dom';
 
 type Props = { 

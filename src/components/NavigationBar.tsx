@@ -14,7 +14,7 @@ export function NavigationBar() {
 
       <div className="flex md:order-2 gap-4">
 
-        <Link  to={'/transport/registration'} className="text-wrap border py-2 px-4 text-slate-50 font-medium text-sm rounded  border-slate-50 bg-slate-800  w-20 md:w-full">Become a partner</Link>
+        <Link  to={'/transport/partnership'} className="text-wrap border py-2 px-4 text-slate-50 font-medium text-sm rounded text-center capitalize border-slate-50 bg-slate-800  w-32 md:w-full">Become a partner</Link>
 
         <div className={`${user ? 'flex' : 'hidden'}`}>
           <Dropdown

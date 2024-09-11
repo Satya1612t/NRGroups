@@ -24,7 +24,8 @@ export const STATIC_DATA = {
     SERVICE: {
         'image1': 'https://www.udtrucks.com/sites/default/files/styles/hero_desktop_crop/public/2022-12/general-cargo-banner_1440x551_3.jpg?itok=iuDtNQ9X',
         'image2': 'https://aparnagrp.com/wp-content/uploads/2023/01/ART_1664-min-scaled.jpg',
-        'image3': 'https://cdn.pixabay.com/photo/2016/11/29/04/15/digger-1867268_1280.jpg'
+        'image3': 'https://cdn.pixabay.com/photo/2016/11/29/04/15/digger-1867268_1280.jpg',
+        'image4': 'https://static.vecteezy.com/system/resources/previews/025/870/607/non_2x/delivery-truck-loaded-with-cardboard-boxes-logistics-warehouse-online-delivery-service-generative-ai-free-photo.jpeg'
 
     },
     TRANSPORTSERVICE: [

@@ -3,8 +3,9 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import IT from "./pages/IT"
 import Transport from "./Transport/Transport"
-import Registration from "./Transport/pages/Registration"
+import Partnership from "./Transport/pages/Partnership"
 import TransportHome from "./Transport/pages/TransportHome"
+import Register from "./Transport/pages/Register"
 
 export const App = () => {
   return (
@@ -16,7 +17,8 @@ export const App = () => {
           <Route path={'it'} element={<IT />} />
           <Route path={'transport'} element={<Transport />} >
               <Route index element={<TransportHome />} />
-              <Route path="registration" element={<Registration />} />
+              <Route path="partnership" element={<Partnership />} />
+              <Route path="register" element={ <Register />} />
           </Route>
         </Routes>
       </BrowserRouter>
