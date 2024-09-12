@@ -10,6 +10,7 @@ import Signup from "./Transport/pages/Signup"
 import Signin from "./Transport/pages/Signin"
 import RealEstate from "./RealEstate/RealEstate"
 
+//changes were made
 export const App = () => {
   return (
     <>
