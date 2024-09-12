@@ -1,6 +1,5 @@
 import { FormEvent, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import axios from "axios"
+import { Link } from "react-router-dom"
 import { Spinner } from "../../components/Spinner"
 import { Alert } from "@mui/material"
 
@@ -14,7 +13,6 @@ type Props = {
 
 function Auth({ type }: Props) {
 
-    const navigate = useNavigate()
     const [isLogging, setIsLogging] = useState(false)
     const [notify, setNotify] = useState("")
     const [severity, setSeverity] = useState<"success" | "error" | "warning" | "info">("success")

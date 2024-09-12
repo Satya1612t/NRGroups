@@ -147,7 +147,7 @@ const VehicleRegistration: React.FC = () => {
 
               <div>
                 <Label className="block text-sm font-medium text-gray-700">Available Routes</Label>
-                {routes.map((route, index) => (
+                {routes.map((_, index) => (
                   <div key={index} className="flex flex-col space-y-2 mt-2">
                     <div className="flex space-x-2">
                       <InputLabel label="From" name={`routes_from_${index + 1}`} placeholder='From' required={true} />
