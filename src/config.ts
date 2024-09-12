@@ -28,6 +28,12 @@ export const STATIC_DATA = {
         'image4': 'https://static.vecteezy.com/system/resources/previews/025/870/607/non_2x/delivery-truck-loaded-with-cardboard-boxes-logistics-warehouse-online-delivery-service-generative-ai-free-photo.jpeg'
 
     },
+    REALESTATE: {
+        'image1': 'https://cdn.pixabay.com/photo/2014/09/18/11/56/skyscrapers-450793_1280.jpg',
+        'image2': 'https://cdn.pixabay.com/photo/2021/10/07/15/23/real-estate-6688945_1280.jpg',
+        'image3': 'https://cdn.pixabay.com/photo/2014/08/03/23/41/house-409451_1280.jpg',
+
+    },
     TRANSPORTSERVICE: [
         {
             'IMG': 'https://cdn.pixabay.com/photo/2024/03/26/11/57/trucks-8656643_1280.jpg',
