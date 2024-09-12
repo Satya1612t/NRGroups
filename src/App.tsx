@@ -5,7 +5,9 @@ import IT from "./pages/IT"
 import Transport from "./Transport/Transport"
 import Partnership from "./Transport/pages/Partnership"
 import TransportHome from "./Transport/pages/TransportHome"
-import Register from "./Transport/pages/Register"
+import VehicleRegistration from "./Transport/pages/VehicleRegistration"
+import Signup from "./Transport/pages/Signup"
+import Signin from "./Transport/pages/Signin"
 
 export const App = () => {
   return (
@@ -16,9 +18,11 @@ export const App = () => {
           <Route path={'about'} element={<About />} />
           <Route path={'it'} element={<IT />} />
           <Route path={'transport'} element={<Transport />} >
-              <Route index element={<TransportHome />} />
-              <Route path="partnership" element={<Partnership />} />
-              <Route path="register" element={ <Register />} />
+            <Route index element={<TransportHome />} />
+            <Route path="partnership" element={<Partnership />} />
+            <Route path="vehicle-register" element={<VehicleRegistration />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="signin" element={<Signin />} />
           </Route>
         </Routes>
       </BrowserRouter>
