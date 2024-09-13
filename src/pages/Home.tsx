@@ -18,7 +18,7 @@ const Home = ({}: Props) => {
                         <h1 className='text-2xl lg:text-xl font-semibold'>Select a Category</h1>
                     </div>
                     <div className='block md:flex justify-center  '>
-                        <ServiceCard type={'it'} />
+                        <ServiceCard type={'real-estate'} />
                         <ServiceCard type={'transport'} />
                     </div>
                 </div>

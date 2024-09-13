@@ -1,34 +1,24 @@
-import { NavigationBar } from "../components/NavigationBar"
-import Footer from "../components/Footer";
-import { Outlet } from "react-router-dom";
+import CardSection from "../components/CardSection";
+import FeaturedSection from "../components/FeatureSection";
+import { SliderRealEstate } from "../components/SliderRealEstate";
 
 
 
-const RealEstate = () => {
+const Realestatehome = () => {
   return (
     <>
-     <div className="w-full h-screen bg-slate-50">
-      <NavigationBar /> 
-        <div>
-          <Outlet />
-        </div>
-      <Footer />
-     </div>
+
+    <SliderRealEstate />
+    <h2 className="text-5xl bg-gray-200 text-center font-bold text-gray-900 ">Our Services</h2>
+    <CardSection />
+    <FeaturedSection />
+    <WhyUs />
+    <Testimonials />
+    <ContactSection />
+    <ServicesSection />
     </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 const Services = [
@@ -344,4 +334,4 @@ const WhyUs= () =>
 
 
 
-export default RealEstate
+export default Realestatehome;

@@ -7,6 +7,8 @@ import Partnership from "./Transport/pages/Partnership"
 import TransportHome from "./Transport/pages/TransportHome"
 import Register from "./Transport/pages/Register"
 import RealEstate from "./RealEstate/RealEstate"
+import Realestatehome from "./RealEstate/pages/Realestatehome"
+import Buypropertiespage from "./RealEstate/pages/Buypropertiespage"
 
 
 export const App = () => {
@@ -17,7 +19,13 @@ export const App = () => {
           <Route path={'/'} element={<Home />} />
           <Route path={'about'} element={<About />} />
           <Route path={'it'} element={<IT />} />
-          <Route path={'realestate'} element={<RealEstate />} />
+
+          <Route path={'realestate'} element={<RealEstate />}>
+             
+            <Route index element={<Realestatehome />} />
+            <Route path="properties-list" element={<Buypropertiespage />} />
+          
+          </Route>
 
           <Route path={'transport'} element={<Transport />} >
           
