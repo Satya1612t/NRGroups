@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Buypropertypage = () => {
   const properties = [
@@ -52,6 +52,33 @@ const Buypropertypage = () => {
     },
     {
       id: 7,
+      title: 'Plot for Sale in Jaipur',
+      price: 250000000,
+      type: 'Plot',
+      image: 'https://example.com/plot.jpg',
+      description: 'A prime plot of land available for sale.',
+    },
+    
+    {
+      id: 7,
+      title: 'Plot for Sale in Jaipur',
+      price: 250000000,
+      type: 'Plot',
+      image: 'https://example.com/plot.jpg',
+      description: 'A prime plot of land available for sale.',
+    },
+    
+    {
+      id: 8,
+      title: 'Plot for Sale in Agra',
+      price: 250000000,
+      type: 'Plot',
+      image: 'https://example.com/plot.jpg',
+      description: 'A prime plot of land available for sale.',
+    },
+    
+    {
+      id: 9,
       title: 'Plot for Sale in Jaipur',
       price: 250000000,
       type: 'Plot',
@@ -162,7 +189,7 @@ const Buypropertypage = () => {
       </div>
 
       {/* Property Cards */}
-      <div className="grid grid-cols-1 py-5 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 py-5 sm:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {filteredProperties.length > 0 ? (
           filteredProperties.map((property) => (
             <div

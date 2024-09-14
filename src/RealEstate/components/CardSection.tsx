@@ -31,7 +31,9 @@ const CardSection: React.FC = () => {
           <div className="p-4 flex flex-col items-center text-center flex-grow">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Sell</h2>
             <p className="text-gray-700 mb-4">Sell your property with the best market value.</p>
-            <button className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition-colors duration-300">See your options</button>
+            <div className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition-colors duration-300">
+              <Link to={'/realestate/loginpage'}> See your options </Link>
+            </div>
           </div>
         </div>
 

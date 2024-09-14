@@ -9,6 +9,7 @@ import Register from "./Transport/pages/Register"
 import RealEstate from "./RealEstate/RealEstate"
 import Realestatehome from "./RealEstate/pages/Realestatehome"
 import Buypropertiespage from "./RealEstate/pages/Buypropertiespage"
+import Loginsignuppage from "./RealEstate/pages/Loginsignuppage"
 
 
 export const App = () => {
@@ -24,7 +25,8 @@ export const App = () => {
              
             <Route index element={<Realestatehome />} />
             <Route path="properties-list" element={<Buypropertiespage />} />
-          
+            <Route path="loginpage" element={ <Loginsignuppage />} />
+            
           </Route>
 
           <Route path={'transport'} element={<Transport />} >
@@ -32,6 +34,8 @@ export const App = () => {
               <Route index element={<TransportHome />} />
               <Route path="partnership" element={<Partnership />} />
               <Route path="register" element={ <Register />} />
+              
+
           
           </Route>
         </Routes>
