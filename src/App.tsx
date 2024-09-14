@@ -5,13 +5,15 @@ import IT from "./pages/IT"
 import Transport from "./Transport/Transport"
 import Partnership from "./Transport/pages/Partnership"
 import TransportHome from "./Transport/pages/TransportHome"
-import Register from "./Transport/pages/Register"
+import VehicleRegistration from "./Transport/pages/VehicleRegistration"
+import Signup from "./Transport/pages/Signup"
+import Signin from "./Transport/pages/Signin"
 import RealEstate from "./RealEstate/RealEstate"
 import Realestatehome from "./RealEstate/pages/Realestatehome"
 import Buypropertiespage from "./RealEstate/pages/Buypropertiespage"
 import Loginsignuppage from "./RealEstate/pages/Loginsignuppage"
 
-
+//changes were made
 export const App = () => {
   return (
     <>
@@ -19,8 +21,6 @@ export const App = () => {
         <Routes >
           <Route path={'/'} element={<Home />} />
           <Route path={'about'} element={<About />} />
-          <Route path={'it'} element={<IT />} />
-
           <Route path={'realestate'} element={<RealEstate />}>
              
             <Route index element={<Realestatehome />} />
@@ -33,11 +33,15 @@ export const App = () => {
           
               <Route index element={<TransportHome />} />
               <Route path="partnership" element={<Partnership />} />
-              <Route path="register" element={ <Register />} />
+              <Route path="vehicle-register" element={<VehicleRegistration />} />
+              <Route path="signup" element={<Signup />} />
+              <Route path="signin" element={<Signin />} />
               
-
+                     </Route>
           
-          </Route>
+      
+
+
         </Routes>
       </BrowserRouter>
     </>

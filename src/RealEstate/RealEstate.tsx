@@ -2,8 +2,6 @@ import { NavigationBar } from "../components/NavigationBar"
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 
-
-
 const RealEstate = () => {
   return (
     <>
@@ -17,17 +15,7 @@ const RealEstate = () => {
     </>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
+//gfhbjkl
 
 
 export default RealEstate
