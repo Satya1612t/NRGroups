@@ -18,7 +18,7 @@ function Partnership({ }: Props) {
     <>
       <div className="w-full">
         <div className="flex flex-col min-h-screen">
-
+          
           <main className="flex-grow">
             <section className="bg-slate-800 overflow-hidden text-white relative ">
               <img className='h-96 w-full object-cover' src="https://static.vecteezy.com/system/resources/previews/025/870/607/non_2x/delivery-truck-loaded-with-cardboard-boxes-logistics-warehouse-online-delivery-service-generative-ai-free-photo.jpeg" alt="" />
@@ -26,7 +26,7 @@ function Partnership({ }: Props) {
               <div className="container mx-auto px-5 text-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:h-64 my-6 md:w-4/5 md:rounded">
                 <h1 className=" text-3xl lg:text-4xl xl:text-6xl font-bold mb-6">Your Truck, Your Schedule, Our Orders</h1>
                 <p className="text-xl mb-8">Register your truck and choose your own delivery routes. We’ll find the orders while you drive on your schedule!</p>
-                <Link to='/transport/register' className='relative z-20'>
+                <Link to='/transport/vehicle-register' className='relative z-20'>
                   <Button size="lg" className=" text-primary text-slate-800 text-lg py-2 bg-slate-50  hover:bg-slate-50">
                     Register Now
                   </Button>
@@ -64,7 +64,7 @@ function Partnership({ }: Props) {
             </section>
 
             <section id="benefits" className="py-10 bg-slate-50">
-              <div className="container mx-auto px-4">
+              <div className="container mx-auto md:px-20 px-4">
                 <h2 className="text-3xl font-bold md:mb-8 mb-6 text-center">Benefits of Partnering With Us</h2>
                 <div className="grid md:grid-cols-3 md:gap-8 gap-6">
                   <div className="bg-white p-6 rounded-lg shadow-lg ">
@@ -83,8 +83,21 @@ function Partnership({ }: Props) {
               </div>
             </section>
 
+            <section className="py-10 bg-slate-200 text-primary-foreground">
+              <div className="container mx-auto px-4 text-center">
+                <h2 className="text-3xl font-bold md:mb-8 mb-6 ">Ready to Get Started?</h2>
+                <p className="text-xl font-semibold md:mb-8 mb-6 ">Join our partner network today and start growing your business!</p>
+                <form className="max-w-md mx-auto flex gap-4">
+                  <Input type="email" placeholder="Enter your email" className="bg- placeholder:text-base  text-primary" />
+                  <Button type="submit" className="bg-slate-800 text-slate-50 text-base md:text-lg hover:bg-gray-100">
+                    Subscribe now
+                  </Button>
+                </form>
+              </div>
+            </section>
+
             <section id="faq" className="py-10 bg-slate-50">
-              <div className="container mx-auto px-4">
+              <div className="container mx-auto md:px-20 px-4">
                 <h2 className="text-3xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
                 <Accordion type="single" collapsible className="max-w-2xl mx-auto">
                   <AccordionItem value="item-1">
@@ -112,19 +125,6 @@ function Partnership({ }: Props) {
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
-              </div>
-            </section>
-
-            <section className="py-10 bg-slate-200 text-primary-foreground">
-              <div className="container mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold md:mb-8 mb-6 ">Ready to Get Started?</h2>
-                <p className="text-xl md:mb-8 mb-6 ">Join our partner network today and start growing your business!</p>
-                <form className="max-w-md mx-auto flex gap-4">
-                  <Input type="email" placeholder="Enter your email" className="bg- placeholder:text-slate-600 border-slate-900 text-primary" />
-                  <Button type="submit" className="bg-slate-900 text-slate-50 text-base md:text-lg hover:bg-gray-100">
-                    Register
-                  </Button>
-                </form>
               </div>
             </section>
           </main>

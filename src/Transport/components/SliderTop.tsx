@@ -58,8 +58,7 @@ export const SliderTop = () => {
                             <img className="object-cover h-80 sm:h-96 lg:h-[calc(100vh-70px)] w-full" src={value} alt={`Service ${key}`} />
                         </div>
                     ))}
-                </Carousel>;
-
+                </Carousel>
             </div>
         </>
     )

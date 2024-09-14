@@ -2,8 +2,6 @@ import { NavigationBar } from "../components/NavigationBar"
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 
-
-
 const RealEstate = () => {
   return (
     <>
@@ -275,7 +273,7 @@ const Testimonials = () => {
       </p>
 
       <div className="flex flex-wrap justify-center space-y-4 sm:space-y-0 sm:space-x-4 w-full max-w-screen-xl">
-        
+
         {/* Testimonial 1 */}
         <div className="w-full sm:w-80 md:w-60 lg:w-72 bg-gray-100 shadow-lg rounded-lg overflow-hidden p-6">
           <p className="italic text-gray-600 mb-4">
@@ -305,8 +303,8 @@ const Testimonials = () => {
 };
 
 
-const WhyUs= () =>
-  { return(
+const WhyUs = () => {
+  return (
     <section className="w-full py-16 bg-gray-100 flex flex-col items-center">
       <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us</h2>
       <p className="text-gray-700 mb-8 text-center max-w-2xl">
@@ -341,7 +339,5 @@ const WhyUs= () =>
     </section>
   )
 };
-
-
 
 export default RealEstate

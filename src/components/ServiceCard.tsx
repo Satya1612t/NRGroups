@@ -18,6 +18,7 @@ function ServiceCard({type}: Props) {
             <p className='text-sm font-light leading-tight my-2'>{type === 'real-estate' ? STATIC_DATA.SERVICE_CARD.REALESTATE.Description : STATIC_DATA.SERVICE_CARD.TRANSPORT.Description}</p>
         </div>
         <Link to={type === 'real-estate' ? '/realestate' : '/transport'} className="text-white bg-gray-800 hover:bg-gray-900 mt flex items-center gap-2 font-medium border-white text-sm px-5   py-2 me-2 capitalize"> <InfoIcon sx={{color: 'white'}} fontSize='small' />{type === 'real-estate' ? 'real-estate' : 'Transport services'}</Link>
+
     </div>
   )
 }

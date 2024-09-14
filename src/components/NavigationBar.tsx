@@ -1,9 +1,11 @@
 "use client";
 
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export function NavigationBar() {
+  const location = useLocation();
+  const isPartnershipPage = location.pathname === '/transport'
   const user = null
   return (
 
@@ -14,9 +16,7 @@ export function NavigationBar() {
 
       <div className="flex md:order-2 gap-4">
 
-        <Link  to={'/transport/partnership'} className="text-wrap border py-2 px-4 text-slate-50 font-medium text-sm rounded text-center capitalize border-slate-50 bg-slate-800  w-32 md:w-full">Become a partner</Link>
-
-        <div className={`${user ? 'flex' : 'hidden'}`}>
+        {user ? (<div className={`${user ? 'flex' : 'hidden'}`}>
           <Dropdown
             arrowIcon={false}
             inline
@@ -34,14 +34,24 @@ export function NavigationBar() {
             <Dropdown.Divider />
             <Dropdown.Item>Sign out</Dropdown.Item>
           </Dropdown>
-          <Navbar.Toggle />
-        </div>
+        </div>) : (
+          <div className="flex justify-center items-center">
+
+            <Link to={'/transport/signin'} className=" bg-inherit md:flex hidden text-slate-900 font-medium text-base rounded text-center capitalize underline  md:w-full">Login</Link>
+          </div>
+        )}
+        {isPartnershipPage &&
+          <Link to={'/transport/partnership'} className="text-wrap border py-2 px-4 text-slate-50 font-medium text-sm rounded text-center capitalize border-slate-50 bg-slate-800 w-28   md:w-full">Become a partner</Link>
+        }
+        <Navbar.Toggle className="" />
       </div>
-      <Navbar.Collapse >
+
+      <Navbar.Collapse className="" >
         <Navbar.Link href="#">Services</Navbar.Link>
         <Navbar.Link href="#">About</Navbar.Link>
         <Navbar.Link href="#">Pricing</Navbar.Link>
         <Navbar.Link href="#">Contact</Navbar.Link>
+        <Navbar.Link href="/transport/signin" className="md:hidden flex">Login</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );
