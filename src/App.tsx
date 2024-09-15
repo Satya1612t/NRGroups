@@ -22,8 +22,8 @@ import { AuthProvider } from "./components/AuthProvider"
 export const App = () => {
   
   return (
-    <AuthProvider >
     <BrowserRouter>
+    <AuthProvider >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
@@ -49,8 +49,8 @@ export const App = () => {
 
       </Routes>
       <Toaster />
-    </BrowserRouter>
     </AuthProvider>
+    </BrowserRouter>
   );
 };
 
