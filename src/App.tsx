@@ -5,7 +5,6 @@ import About from "./pages/About";
 import Transport from "./Transport/Transport";
 import Partnership from "./Transport/pages/Partnership";
 import TransportHome from "./Transport/pages/TransportHome";
-import VehicleRegistration from "./Transport/pages/VehicleRegistration";
 import Signup from "./Transport/pages/Signup";
 import Signin from "./Transport/pages/Signin";
 import RealEstate from "./RealEstate/RealEstate";
@@ -23,6 +22,7 @@ import { AuthProvider } from "./components/AuthProvider"
 export const App = () => {
   
   return (
+    <AuthProvider >
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -50,6 +50,7 @@ export const App = () => {
       </Routes>
       <Toaster />
     </BrowserRouter>
+    </AuthProvider>
   );
 };
 
