@@ -6,6 +6,10 @@ import { Link, useLocation } from "react-router-dom";
 export function NavigationBar() {
   const location = useLocation();
   const isPartnershipPage = location.pathname === '/transport'
+  const isHome = location.pathname
+  console.log(isHome);
+  
+
   const user = null
   return (
 
@@ -37,7 +41,7 @@ export function NavigationBar() {
         </div>) : (
           <div className="flex justify-center items-center">
 
-            <Link to={'/transport/signin'} className=" bg-inherit md:flex hidden text-slate-900 font-medium text-base rounded text-center capitalize underline  md:w-full">Login</Link>
+            <Link to={`${location.pathname.includes('/realestate') ? '/realestate/loginpage' : '/transport/signin'}`} className=" bg-inherit md:flex hidden text-slate-900 font-medium text-base rounded text-center capitalize underline  md:w-full">Login</Link>
           </div>
         )}
         {isPartnershipPage &&

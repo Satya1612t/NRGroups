@@ -9,7 +9,7 @@ type Props = {
 function ServiceCard({type}: Props) {
   return (
     <div className="relative flex flex-col items-center px-5 py-8 pb-12 lg:pb-0  cursor-pointer">
-        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-0 bg-gray-800 text-white uppercase border-slate-50  text-2xl font-bold px-5 py-2 h-14 md:flex flex-col items-center justify-center ">{type === 'real-estate' ? 'real-estate' : 'transport'}</div>
+        <div className="absolute whitespace-nowrap top-0 left-1/2 transform -translate-x-1/2 -translate-y-0 bg-gray-800 text-white uppercase border-slate-50  text-xl font-bold px-5 py-2 h-14 md:flex flex-col items-center justify-center ">{type === 'real-estate' ? 'real-estate' : 'transport'}</div>
         <div className="w-full h-auto ">
             <img src={type === 'real-estate' ? STATIC_DATA.IMAGE_URL.rs : STATIC_DATA.IMAGE_URL.transport} alt="alt" className="md:h-56 h-44 object-cover w-full" />
         </div>

@@ -1,5 +1,6 @@
 import CardSection from "../components/CardSection";
 import FeaturedSection from "../components/FeatureSection";
+import { useState } from "react";
 import { SliderRealEstate } from "../components/SliderRealEstate";
 
 
@@ -13,9 +14,9 @@ const Realestatehome = () => {
     <CardSection />
     <FeaturedSection />
     <WhyUs />
+    <ServicesSection />
     <Testimonials />
     <ContactSection />
-    <ServicesSection />
     </>
   )
 }
@@ -61,7 +62,7 @@ const Services = [
 
 const ServicesSection = () => {
   return (
-    <div className="w-full py-16 bg-gray-100 flex flex-col justify-center">
+    <div className="w-full py-16 px-3 bg-gray-100 flex flex-col justify-center">
     <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
       Explore Our Real Estate Services
     </h2>
@@ -150,111 +151,114 @@ const ServicesSection = () => {
   
 );
 };
-
-
 const ContactSection = () => {
+  const [isFormVisible, setFormVisible] = useState(false);
 
-const handleClick = () => {
-const form = document.getElementById('contact-form');
-    if (form) {
-      form.classList.toggle('hidden');
-    }
+  const handleClick = () => {
+    setFormVisible(!isFormVisible);
   };
 
   return (
-    <section className="w-full bg-gray-300 py-16 flex flex-col items-center justify-center relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-300 via-gray-400 to-gray-500 opacity-30 z-0"></div>
-      <div className="relative z-10 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-        <p className="text-gray-700 mb-8 max-w-xl mx-auto">
+    <section className="w-full bg-gray-800 py-16 flex flex-col items-center justify-center relative">
+      <div className="absolute inset-0   z-0"></div>
+      <div className="relative z-10 text-center text-white">
+        <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+        <p className="mb-8 max-w-xl mx-auto">
           Have any questions or need more information? Click the button below to contact us directly.
         </p>
         <button
           onClick={handleClick}
-          className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+          className="bg-white text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors duration-300"
         >
           Contact Us
         </button>
       </div>
-      <div id="contact-form" className="hidden">
-        <ContactUs />
-      </div>
+
+      {/* Modal Section */}
+      {isFormVisible && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="relative bg-gray-900 p-6 rounded-lg shadow-md w-full max-w-lg">
+            <button
+              onClick={handleClick}
+              className="absolute top-2 right-2 text-white text-2xl focus:outline-none"
+            >
+              &times;
+            </button>
+            <ContactUs />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
 
-
-
-const ContactUs = ()  => 
-{
-  return(
-    <section className="w-full py-16 bg-gray-100 flex flex-col items-center">
-      <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Us</h2>
-      <p className="text-gray-700 mb-8 text-center max-w-xl">
+const ContactUs = () => {
+  return (
+    <div className="w-full">
+      <h2 className="text-3xl font-bold text-white mb-6 text-center">Contact Us</h2>
+      <p className="text-white mb-8 text-center max-w-xl mx-auto">
         Feel free to reach out to us for any inquiries or questions. We'd love to hear from you!
       </p>
 
-      <form className="w-full max-w-lg bg-white p-6 rounded-lg shadow-md">
+      <form className="w-full max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-md">
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+          <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
             Name
           </label>
           <input
             type="text"
             id="name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
             placeholder="Your Name"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+          <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
             Email
           </label>
           <input
             type="email"
             id="email"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
             placeholder="Your Email"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+          <label className="block text-white text-sm font-bold mb-2" htmlFor="phone">
             Phone Number
           </label>
           <input
             type="tel"
             id="phone"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
             placeholder="Your Phone Number"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+          <label className="block text-white text-sm font-bold mb-2" htmlFor="message">
             Message
           </label>
           <textarea
             id="message"
             rows={4}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-600 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-gray-500"
             placeholder="Your Message"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+          className="w-full bg-white text-gray-800 py-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
         >
           Send Message
         </button>
       </form>
-    </section>
+    </div>
   );
 };
-
-
 
 const Testimonials = () => {
   return (
@@ -297,7 +301,7 @@ const Testimonials = () => {
 
 const WhyUs= () =>
   { return(
-    <section className="w-full py-16 bg-gray-100 flex flex-col items-center">
+    <section className="w-full py-16 px-4 bg-gray-100 flex flex-col items-center">
       <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us</h2>
       <p className="text-gray-700 mb-8 text-center max-w-2xl">
         We provide unparalleled real estate services to meet your needs, with a focus on customer satisfaction, transparency, and professionalism.
