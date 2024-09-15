@@ -14,7 +14,7 @@ export function NavigationBar() {
   return (
 
     <Navbar fluid rounded className="border-b bg-slate-50 py-5 md:py-3">
-      <Navbar.Brand href="/transport" className="">
+      <Navbar.Brand href={`${location.pathname.includes('/transport') ? "/transport" : '/realestate'}`} className="">
         <h1 className='text-4xl font-bold tracking-tighter '>NRGroup</h1>
       </Navbar.Brand>
 

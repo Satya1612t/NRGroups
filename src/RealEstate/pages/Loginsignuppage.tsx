@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import toast from 'react-hot-toast';
@@ -31,6 +32,7 @@ const signupSchema = Yup.object({
 });
 
 const Loginsignuppage = () => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
 
@@ -66,6 +68,7 @@ const Loginsignuppage = () => {
               color: '#fff',
             },
           });
+          navigate('/realestate/roleselection');
         } else {
           throw new Error(result.message || 'Login failed');
         }
@@ -123,10 +126,12 @@ const Loginsignuppage = () => {
 
   return (
     <div
-      className="min-h-screen px-3 flex items-center justify-center bg-cover bg-center bg-opacity-40"
-      style={{ backgroundImage: `url('https://wallpapers.com/images/featured/apartment-bbiy2mat3yd31d3t.jpg')` }}
-    >
-      <div className="relative bg-black bg-opacity-20 backdrop-blur-lg rounded-xl shadow-lg w-full max-w-md p-8">
+  className="min-h-screen px-3 flex items-center justify-center bg-cover bg-center"
+  style={{
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://wallpapers.com/images/featured/apartment-bbiy2mat3yd31d3t.jpg')`
+  }}
+>
+      <div className="relative bg-black bg-opacity-20 backdrop-blur-lg  rounded-xl shadow-lg w-full max-w-md p-8">
         <div className="absolute inset-0 bg-white bg-opacity-10 rounded-lg z-[-1]" />
         <div className="text-center mb-6">
           <h2 className="text-gray-800 text-2xl font-bold">Welcome to NR Real Estate</h2>
