@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const CardSection: React.FC = () => {
   return (
-<div className="w-full py-16 bg-gray-200 flex items-center justify-center">
+<div className="w-full py-16 px-5 bg-gray-200 flex items-center justify-center">
       <div className="flex flex-wrap justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 w-full max-w-screen-xl">
         
         {/* Card 1 */}
@@ -32,7 +32,7 @@ const CardSection: React.FC = () => {
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Sell</h2>
             <p className="text-gray-700 mb-4">Sell your property with the best market value.</p>
             <div className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition-colors duration-300">
-              <Link to={'/realestate/loginpage'}> See your options </Link>
+              <Link to={'/realestate/add-properties-sell'}> See your options </Link>
             </div>
           </div>
         </div>
