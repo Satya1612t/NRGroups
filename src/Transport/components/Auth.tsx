@@ -82,6 +82,7 @@ function Auth({ type, control }: Props) {
         </>
     )
 }
+//Auth
 
 interface LabelledInputType {
     type?: string;
