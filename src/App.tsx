@@ -13,6 +13,8 @@ import Buypropertiespage from "./RealEstate/pages/Buypropertiespage";
 import Loginsignuppage from "./RealEstate/pages/Loginsignuppage";
 import AddPropertyPage from "./RealEstate/pages/Addpropertypage";
 import { Toaster } from "react-hot-toast";
+import RoleSelection from "./RealEstate/pages/RoleSelection";
+import ProfileForm from "./RealEstate/pages/ProfileForm";
 
 export const App = () => {
   return (
@@ -20,12 +22,16 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+
         <Route path="realestate" element={<RealEstate />}>
           <Route index element={<Realestatehome />} />
           <Route path="properties-list" element={<Buypropertiespage />} />
           <Route path="add-properties-sell" element={<AddPropertyPage />} />
           <Route path="loginpage" element={<Loginsignuppage />} />
+          <Route path="roleselection" element={<RoleSelection />} />
+          <Route path="roleselection/profile-form" element={<ProfileForm />} />
         </Route>
+
         <Route path="transport" element={<Transport />}>
           <Route index element={<TransportHome />} />
           <Route path="partnership" element={<Partnership />} />
@@ -33,6 +39,7 @@ export const App = () => {
           <Route path="signup" element={<Signup />} />
           <Route path="signin" element={<Signin />} />
         </Route>
+
       </Routes>
       <Toaster />
     </BrowserRouter>
