@@ -55,7 +55,7 @@ export function NavigationBar() {
         <Navbar.Link href="#">About</Navbar.Link>
         <Navbar.Link href="#">Pricing</Navbar.Link>
         <Navbar.Link href="#">Contact</Navbar.Link>
-        {!isAuthenticated && <Navbar.Link href="/transport/signin" className="md:hidden flex">Login</Navbar.Link>}
+        {!isAuthenticated && <Navbar.Link href={`${location.pathname.includes('/realestate') ? '/realestate/loginpage' : '/transport/signin'}`} className="md:hidden flex">Login</Navbar.Link>}
       </Navbar.Collapse>
     </Navbar>
   );
