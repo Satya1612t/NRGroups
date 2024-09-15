@@ -2,7 +2,7 @@ import React from 'react';
 
 const FeaturedSection: React.FC = () => {
   return (
-    <section className="w-full py-16 bg-white flex flex-col items-center">
+    <section className="w-full py-16 px-3 bg-white flex flex-col items-center">
       <h2 className="text-3xl font-bold text-gray-900 mb-6">Featured Properties</h2>
       <p className="text-gray-700 mb-8 text-center max-w-2xl">
         Discover some of our top listings. Whether you're looking to buy, sell, or rent, these featured properties offer excellent options and opportunities.

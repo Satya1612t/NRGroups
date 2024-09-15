@@ -4,20 +4,17 @@ export const STATIC_DATA = {
     IMAGE_URL: {
         'it': 'https://theforage.wpengine.com/wp-content/uploads/2022/09/tech-companies-1536x1024.jpg',
         'transport': 'https://www.easyhaul.com/blog/wp-content/uploads/2021/07/Blog-EasyHaul-Modes-of-Transport-Title-1.png',
-        'rs': 'https://www.easyhaul.com/blog/wp-content/uploads/2021/07/Blog-EasyHaul-Modes-of-Transport-Title-1.png',
+        'rs': 'https://th.bing.com/th/id/R.0b31e4d4f27935ae9b49706ff97b9daa?rik=3PtSqXlR0m7nDw&riu=http%3a%2f%2fwww.skylinearchitect.com%2fwp-content%2fuploads%2f2018%2f11%2fslider-25.jpg&ehk=ydHbLnn6UMVfAhxKshfSQlp66F0Q%2fF34xMBmvNJEebM%3d&risl=&pid=ImgRaw&r=0',
     },
     SERVICE_CARD: {
-        IT: {
-            'Title': 'Comprehensive IT Services for Modern Businesses',
-            'Description': 'Explore our cutting-edge IT services, designed to drive your business forward. From software development to cloud solutions, NR Group has you covered.'
-        },
+        
         TRANSPORT: {
             'Title': 'Reliable Transport Solutions for Your Business Needs',
             'Description': 'Discover our dependable transport solutions tailored to ensure the safe and timely delivery of your goods. NR Group is your trusted logistics partner.'
         },
-        REAL_STATE: {
-            'Title': 'Reliable Transport Solutions for Your Business Needs',
-            'Description': 'Discover our dependable transport solutions tailored to ensure the safe and timely delivery of your goods. NR Group is your trusted logistics partner.'
+        REALESTATE: {
+            'Title': 'Connecting You to Your Ideal Home and Investment',
+            'Description': 'Your go-to partner for buying and selling homes in India. We offer expert guidance and a personal touch to make real estate simple and stress-free.'
         },
 
     },
