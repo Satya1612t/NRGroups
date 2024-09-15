@@ -4,7 +4,7 @@ export const Spinner = () => {
 
     return (
         <>
-            <div className="h-screen min-w-full bg-white opacity-50">
+            <div className="h-screen min-w-full bg-white opacity-50 z-auto">
                 <MutatingDots
                     visible={true}
                     height="100"

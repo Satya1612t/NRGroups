@@ -1,6 +1,6 @@
 
-
 export const STATIC_DATA = {
+    
     IMAGE_URL: {
         'it': 'https://theforage.wpengine.com/wp-content/uploads/2022/09/tech-companies-1536x1024.jpg',
         'transport': 'https://www.easyhaul.com/blog/wp-content/uploads/2021/07/Blog-EasyHaul-Modes-of-Transport-Title-1.png',
