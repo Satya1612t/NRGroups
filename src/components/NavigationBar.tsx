@@ -7,18 +7,10 @@ import { useAuth } from "./AuthProvider";
 export function NavigationBar() {
   const location = useLocation();
   const isPartnershipPage = location.pathname === '/transport'
-<<<<<<< HEAD
   const isLoginPage = location.pathname === '/transport/signin'
   const { user, logout, isAuthenticated } = useAuth()
 
 
-=======
-  const isHome = location.pathname
-  console.log(isHome);
-  
-
-  const user = null
->>>>>>> 257625c68679223ee14cd577edb412d607aa5810
   return (
 
     <Navbar fluid rounded className="border-b bg-slate-50 py-5 md:py-3">
