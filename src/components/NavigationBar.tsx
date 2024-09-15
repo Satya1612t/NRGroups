@@ -2,15 +2,15 @@
 
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import { Link, useLocation } from "react-router-dom";
+import { useAuth } from "./AuthProvider";
 
 export function NavigationBar() {
   const location = useLocation();
   const isPartnershipPage = location.pathname === '/transport'
-  const isHome = location.pathname
-  console.log(isHome);
-  
+  const isLoginPage = location.pathname === '/transport/signin'
+  const { user, logout, isAuthenticated } = useAuth()
 
-  const user = null
+
   return (
 
     <Navbar fluid rounded className="border-b bg-slate-50 py-5 md:py-3">
@@ -20,7 +20,7 @@ export function NavigationBar() {
 
       <div className="flex md:order-2 gap-4">
 
-        {user ? (<div className={`${user ? 'flex' : 'hidden'}`}>
+        {isAuthenticated ? (<div className={`${isAuthenticated ? 'flex' : 'hidden'}`}>
           <Dropdown
             arrowIcon={false}
             inline
@@ -28,17 +28,17 @@ export function NavigationBar() {
               <Avatar alt="User settings" img="" rounded />
             }
           >
-            <Dropdown.Header>
-              <span className="block text-sm">Bonnie Green</span>
-              <span className="block truncate text-sm font-medium">name@flowbite.com</span>
+            <Dropdown.Header className="z-50">
+              <span className="block text-sm">{user?.name}</span>
+              <span className="block truncate text-sm font-medium">{user?.email}</span>
             </Dropdown.Header>
             <Dropdown.Item>Dashboard</Dropdown.Item>
             <Dropdown.Item>Settings</Dropdown.Item>
             <Dropdown.Item>Earnings</Dropdown.Item>
             <Dropdown.Divider />
-            <Dropdown.Item>Sign out</Dropdown.Item>
+            <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
           </Dropdown>
-        </div>) : (
+        </div>) : ( !isLoginPage &&
           <div className="flex justify-center items-center">
 
             <Link to={`${location.pathname.includes('/realestate') ? '/realestate/loginpage' : '/transport/signin'}`} className=" bg-inherit md:flex hidden text-slate-900 font-medium text-base rounded text-center capitalize underline  md:w-full">Login</Link>
@@ -55,8 +55,11 @@ export function NavigationBar() {
         <Navbar.Link href="#">About</Navbar.Link>
         <Navbar.Link href="#">Pricing</Navbar.Link>
         <Navbar.Link href="#">Contact</Navbar.Link>
-        <Navbar.Link href="/transport/signin" className="md:hidden flex">Login</Navbar.Link>
+        {!isAuthenticated && <Navbar.Link href="/transport/signin" className="md:hidden flex">Login</Navbar.Link>}
       </Navbar.Collapse>
     </Navbar>
   );
+
+ 
+
 }

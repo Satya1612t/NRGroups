@@ -26,7 +26,7 @@ function Partnership({ }: Props) {
               <div className="container mx-auto px-5 text-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:h-64 my-6 md:w-4/5 md:rounded">
                 <h1 className=" text-3xl lg:text-4xl xl:text-6xl font-bold mb-6">Your Truck, Your Schedule, Our Orders</h1>
                 <p className="text-xl mb-8">Register your truck and choose your own delivery routes. We’ll find the orders while you drive on your schedule!</p>
-                <Link to='/transport/vehicle-register' className='relative z-20'>
+                <Link to='/transport/register' className='relative z-20'>
                   <Button size="lg" className=" text-primary text-slate-800 text-lg py-2 bg-slate-50  hover:bg-slate-50">
                     Register Now
                   </Button>

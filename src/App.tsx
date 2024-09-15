@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -15,8 +16,12 @@ import AddPropertyPage from "./RealEstate/pages/Addpropertypage";
 import { Toaster } from "react-hot-toast";
 import RoleSelection from "./RealEstate/pages/RoleSelection";
 import ProfileForm from "./RealEstate/pages/ProfileForm";
+import Registration from "./Transport/pages/Registration"
+import ProtectedRoute from "./components/ProtectedRoutes"
+import { AuthProvider } from "./components/AuthProvider"
 
 export const App = () => {
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -32,16 +37,19 @@ export const App = () => {
           <Route path="roleselection/profile-form" element={<ProfileForm />} />
         </Route>
 
-        <Route path="transport" element={<Transport />}>
-          <Route index element={<TransportHome />} />
-          <Route path="partnership" element={<Partnership />} />
-          <Route path="vehicle-register" element={<VehicleRegistration />} />
-          <Route path="signup" element={<Signup />} />
-          <Route path="signin" element={<Signin />} />
-        </Route>
+            <Route path={'transport'} element={<Transport />} >
+              <Route index element={<TransportHome />} />
+              <Route path="partnership" element={<Partnership />} />
+              <Route path="signup" element={<Signup />} />
+              <Route path="signin" element={<Signin />} />
+              <Route element={<ProtectedRoute />}>
+                <Route path='register' element={<Registration />} />
+              </Route>
+            </Route>
 
       </Routes>
       <Toaster />
     </BrowserRouter>
   );
 };
+
