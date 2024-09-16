@@ -20,7 +20,6 @@ function Signin({ }: Props) {
               <h1 className="md:text-white font-extrabold text-4xl bg-white p-2 md:bg-transparent md:p-0 ">24 hours a day</h1>
             </div>
           </div>
-
         </div>
       </div>}
     </>
