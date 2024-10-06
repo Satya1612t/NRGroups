@@ -14,6 +14,7 @@ import AddRoadIcon from '@mui/icons-material/AddRoad';
 import AutoModeIcon from '@mui/icons-material/AutoMode';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
+import Footer from "@/components/Footer";
 
 type Props = {}
 
@@ -43,6 +44,7 @@ function TransportHome({ }: Props) {
                 <h1 className="text-lg md:text-2xl font-semibold text-slate-900 capitalize">Not sure which solution fits you business needs?</h1>
                 <Link to='' className="text-white bg-gray-800  hover:bg-gray-900  font-medium text-center whitespace-nowrap text-sm px-5 py-3 rounded-sm border-slate-50 border md:border-none capitalize">Contact Us</Link>
             </div>
+            <Footer />
         </>
     )
 }

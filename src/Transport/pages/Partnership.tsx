@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Truck, Package, DollarSign, HelpCircle } from 'lucide-react'
 import { useState } from 'react'
+import  Footer from '@/components/Footer'
 
 type Props = {}
 
@@ -128,7 +129,7 @@ function Partnership({ }: Props) {
               </div>
             </section>
           </main>
-
+          <Footer />
         </div>
       </div>
     </>

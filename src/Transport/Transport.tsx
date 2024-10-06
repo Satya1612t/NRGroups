@@ -1,8 +1,7 @@
 import { Outlet } from "react-router-dom"
-import { NavigationBar } from "../components/NavigationBar"
-import Footer from "../components/Footer"
 import { useEffect } from 'react'
 import { useAuth } from '../components/AuthProvider'
+import Navbar from "@/components/Navbar"
 
 const Transport = () => {
   const { isAuthenticated, fetchUserDetails } = useAuth();
@@ -16,11 +15,10 @@ const Transport = () => {
 
   return (
     <div className="w-full h-screen bg-slate-50">
-      <NavigationBar />
+      <Navbar />
       <div>
         <Outlet />
       </div>
-      <Footer />
     </div>
   )
 }

@@ -4,9 +4,9 @@ import { useAuth } from './AuthProvider';
 
 
 const ProtectedRoute = () => {
-  const { isAuthenticated } = useAuth();
+  const { user } = useAuth();
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/transport/signin" />;
+  return user ? <Outlet /> : <Navigate to="/transport/signin" />;
 
 };
 

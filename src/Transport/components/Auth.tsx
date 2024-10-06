@@ -1,9 +1,8 @@
 import { FormEvent } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import axios from "axios";
-import { toast } from 'react-toastify'
+import { toast } from 'react-hot-toast'
 import { useAuth } from "@/components/AuthProvider";
-
 
 type Props = {
     type: 'signin' | 'signup'
@@ -14,7 +13,6 @@ type Props = {
 }
 
 function Auth({ type, control }: Props) {
-    const navigate = useNavigate()
     const { login } = useAuth()
 
     const handleUserSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -22,32 +20,36 @@ function Auth({ type, control }: Props) {
         control.setIsLogging(true)
         let form = new FormData(e.target as HTMLFormElement);
         let formObj = Object.fromEntries(form.entries());
-        formObj['type'] = 'Transport'
-
+        formObj['domain'] = 'TRANSPORT'
+        
         try {
-            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/transport/${type === 'signup' ? 'signup' : 'signin'}`, formObj, {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/v1/user/${type === 'signup' ? 'signup' : 'signin'}`, JSON.stringify(formObj), {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-            }
-            );
-            const token = response.data.token
-            if (!token) {
-                toast.error("error while loading, try again")
-            }
-            else {
-                localStorage.setItem('token', token)
-                type === 'signup' ? toast.success(response.data.msg || "Profile Created Successfully") : toast.success(response.data.msg || "Welcome Back")
-                login(token);
-                navigate('/transport/register');
-                // type === 'signup' ? navigate('/transport/signin') : navigate('/transport/register')
+            })
+                .catch(err => {
+                    console.error(err.response ? err.response.data : err.message);
+                    toast.error("Request failed. Please check your data or server.");
+                    return;
+                });
+            if (response && response.data) {
+                const token = response.data.token
+                if (!token) {
+                    toast.error("error while loading, try again")
+                }
+                else {
+                    localStorage.setItem('token', token)
+                    type === 'signup' ? toast.success(response.data.msg || "Profile Created Successfully") : toast.success(response.data.msg || "Welcome Back")
+                    login(token);
+                }
             }
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 if (error.response) {
                     toast.error(error.response.data.error || "Error occurred during request");
                 } else if (error.request) {
-                    toast.warning("No response from server. Please try again.");
+                    toast.error("No response from server. Please try again.");
                 } else {
                     toast.error("Request setup error");
                 }
@@ -73,7 +75,7 @@ function Auth({ type, control }: Props) {
                             {type === 'signup' ? <LabelInput label="Name" placeholder="John" /> : ''}
                             <LabelInput label="Email" placeholder="john@example.com" />
                             <LabelInput label="Password" type={"password"} placeholder="*********" />
-                            {type === 'signup' ? <LabelInput label="Mobile" placeholder="John" /> : ''}
+                            {type === 'signup' ? <LabelInput label="Phone" placeholder="John" /> : ''}
                             <button type="submit" className="text-black bg-slate-100 hover:bg-slate-50 font-medium rounded-sm text-sm px-6 py-2.5  me-2 mb-2">{type === 'signup' ? 'Create' : 'Login'}</button>
                         </div>
                     </form>

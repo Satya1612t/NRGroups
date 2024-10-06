@@ -1,13 +1,14 @@
+import { Package, User, BadgeDollarSignIcon, SettingsIcon, Truck, Package2, UserPlus, Route, BusFront } from 'lucide-react'
 
 export const STATIC_DATA = {
-    
+
     IMAGE_URL: {
         'it': 'https://theforage.wpengine.com/wp-content/uploads/2022/09/tech-companies-1536x1024.jpg',
         'transport': 'https://www.easyhaul.com/blog/wp-content/uploads/2021/07/Blog-EasyHaul-Modes-of-Transport-Title-1.png',
         'rs': 'https://th.bing.com/th/id/R.0b31e4d4f27935ae9b49706ff97b9daa?rik=3PtSqXlR0m7nDw&riu=http%3a%2f%2fwww.skylinearchitect.com%2fwp-content%2fuploads%2f2018%2f11%2fslider-25.jpg&ehk=ydHbLnn6UMVfAhxKshfSQlp66F0Q%2fF34xMBmvNJEebM%3d&risl=&pid=ImgRaw&r=0',
     },
     SERVICE_CARD: {
-        
+
         TRANSPORT: {
             'Title': 'Reliable Transport Solutions for Your Business Needs',
             'Description': 'Discover our dependable transport solutions tailored to ensure the safe and timely delivery of your goods. NR Group is your trusted logistics partner.'
@@ -59,19 +60,41 @@ export const STATIC_DATA = {
         MH: 'https://1000logos.net/wp-content/uploads/2020/09/Maxwell-House-Logo-2009.jpg',
         Amul: 'https://i.pinimg.com/736x/b4/79/59/b4795930724b1425b87e0040ee01c80b.jpg',
         Bajaj: 'https://assets.upstox.com/content/assets/images/cms/202463/Bajaj%20Auto.jpg',
-        Nestle:'https://live.staticflickr.com/5058/5537492450_5c1e01a8d6_b.jpg'
-        
+        Nestle: 'https://live.staticflickr.com/5058/5537492450_5c1e01a8d6_b.jpg'
+
     },
-    INDUSTRY_SERVE:{
-        
+    INDUSTRY_SERVE: {
+
         FMCG: 'https://tridentinfo.com/wp-content/uploads/2023/09/Quality-Control-in-the-FMCG-Industry-Visual-Inspection-Solutions-for-Reliable-Products-1024x683.webp',
-        Fishing:'https://thumbs.dreamstime.com/b/fishing-industry-atlantic-northern-oceans-unloading-freshly-caught-fish-motion-blur-background-generative-ai-fishing-325074858.jpg',
-        Pharma:'https://thumbs.dreamstime.com/b/fishing-industry-atlantic-northern-oceans-unloading-freshly-caught-fish-motion-blur-background-generative-ai-fishing-325074858.jpg',
-        Sports:'https://www.globalvillagespace.com/wp-content/uploads/2021/06/Provincial-Cabinet-approves-Punjabs-first-sports-policy-Punjab-Sport-Minister.jpg',
-        Electronics:'https://www.eetindia.co.in/wp-content/uploads/sites/4/2020/05/components.jpg?w=1024',
-        Vegetables:'https://www.foodmag.com.au/wp-content/uploads/2021/04/freshproducelarge-1024x683.jpg',
-        Durables:'https://5.imimg.com/data5/SELLER/Default/2023/8/333207549/OL/DQ/GT/32732628/house-shifting-packing-and-moving-services-same-state.jpg',
+        Fishing: 'https://thumbs.dreamstime.com/b/fishing-industry-atlantic-northern-oceans-unloading-freshly-caught-fish-motion-blur-background-generative-ai-fishing-325074858.jpg',
+        Pharma: 'https://thumbs.dreamstime.com/b/fishing-industry-atlantic-northern-oceans-unloading-freshly-caught-fish-motion-blur-background-generative-ai-fishing-325074858.jpg',
+        Sports: 'https://www.globalvillagespace.com/wp-content/uploads/2021/06/Provincial-Cabinet-approves-Punjabs-first-sports-policy-Punjab-Sport-Minister.jpg',
+        Electronics: 'https://www.eetindia.co.in/wp-content/uploads/sites/4/2020/05/components.jpg?w=1024',
+        Vegetables: 'https://www.foodmag.com.au/wp-content/uploads/2021/04/freshproducelarge-1024x683.jpg',
+        Durables: 'https://5.imimg.com/data5/SELLER/Default/2023/8/333207549/OL/DQ/GT/32732628/house-shifting-packing-and-moving-services-same-state.jpg',
         Stationary: 'https://img.freepik.com/free-photo/top-view-back-school-stationery-with-medical-mask-colorful-pencils_23-2148587549.jpg',
     }
+}
+
+export const getMenuItems = (user: any) => {
+    return [
+        { name: 'Dashboard', icon: Package },
+        { name: 'Profile', icon: User },
+        {
+            name: user?.role === 'TRUCKER' ? 'My Vehicle' : user?.role === 'CONSIGNER' ? 'My Orders' : '', icon: user?.role === 'TRUCKER' ? Truck : user?.role === 'CONSIGNER' ? Package2 : User,
+            subMenu: user?.role === 'TRUCKER' ? [
+                { name: 'Add New Vehicle', icon: BusFront },
+                { name: 'Update Routes', icon: Route },
+                { name: 'Register Driver', icon: UserPlus },
+            ] : [
+                { name: 'Add New Vehicle', icon: BusFront },
+                { name: 'Update Routes', icon: Route },
+                { name: 'Register Driver', icon: UserPlus },
+            ]
+        },
+        { name: 'Earnings', icon: BadgeDollarSignIcon },
+        { name: 'Settings', icon: SettingsIcon },
+        // { name: userType === 'USER' ? 'Demands' : userType === 'TRUCKER' ? 'Deliveries' : 'Commissions', icon: Package },
+    ]
 }
 
